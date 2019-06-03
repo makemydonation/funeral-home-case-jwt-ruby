@@ -1,8 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    concurrent-ruby (1.1.5)
     daemons (1.2.2)
     eventmachine (1.0.7)
+    faker (1.9.3)
+      i18n (>= 0.7)
+    i18n (1.6.0)
+      concurrent-ruby (~> 1.0)
+    jwt (2.2.1)
     rack (1.6.0)
     rack-protection (1.5.3)
       rack
@@ -20,5 +26,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  faker
+  jwt
   sinatra (~> 1.4.4)
   thin
+
+RUBY VERSION
+   ruby 2.6.3p62
+
+BUNDLED WITH
+   2.0.1
