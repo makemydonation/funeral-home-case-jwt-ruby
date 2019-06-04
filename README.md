@@ -9,6 +9,7 @@ Make sure you have [Ruby](https://www.ruby-lang.org), [Bundler](http://bundler.i
 ```sh
 git clone git@github.com:makemydonation/funeral-home-case-jwt-ruby.git # or clone your own fork
 cd funeral-home-case-jwt-ruby
+cp .env.example .env # then edit the .env file with your data
 bundle
 heroku local
 ```
