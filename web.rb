@@ -23,8 +23,14 @@ get '/' do
 
   # An alpha-numeric internal id for your obit case
   #
-  # This id should be unique for each case.
+  # This id is required and should be unique for each case.
   # You may want to use your own system index id as this value.
+  #
+  # Your internal id will not conflict with internal ids of other funeral homes
+  # so you don't need to prefix it with an identifier unique to you.
+  #
+  # If you want to update the case data, we use the internal id to identify the
+  # desired case to be changed.
   case_internal_id = rand(36**8).to_s(36)
 
   # The object that will be set as the JWT header
