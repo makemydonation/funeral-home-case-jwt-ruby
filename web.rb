@@ -70,6 +70,7 @@ get '/' do
   alg = 'HS256'
 
   token = JWT.encode(payload, key, alg, header)
+  donation_link = funeral_home_subdomain + "/funeral_home/" + funeral_home_id.to_s + "/case/internal/" + case_internal_id + "?token=" + token
 
 "
 <!DOCTYPE>
@@ -78,22 +79,28 @@ get '/' do
     <title>Obituary of " + case_name + "</title>
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
   </head>
-  <body style='text-align: center; margin: 4em'>
+  <body style='text-align: center; margin: 4rem'>
+    <h1>Make My Donation - In Memory Of</h1>
+    <p class='lead' style='margin-bottom: 5rem'>Inline Funeral Home Case creation with JWT</p>
     <p>
       <a
-        class='btn btn-outline-primary'
+        class='btn btn-primary'
         target='_blank'
-        href='" + funeral_home_subdomain + "/funeral_home/" + funeral_home_id.to_s + "/case/internal/" + case_internal_id + "?token=" + token + "'
+        href='" + donation_link + "'
       >
         Make My Donation in memory of " + case_name + "
       </a>
     </p>
-    <div>
-      <ul class='list-group list-group-flush'>
+    <div class='card' style='margin: 4rem auto; max-width: 50rem'>
+      <ul class='list-group list-group-flush text-secondary'>
         <li class='list-group-item'>Family emails: " + case_family_emails.join(', ') + "</li>
         <li class='list-group-item'>Charities: " + case_charities.join(', ') +"</li>
       </ul>
     </div>
+    <hr>
+    <p>
+    <a href='https://github.com/makemydonation/funeral-home-case-jwt-ruby'>View source on GitHub</a>
+    </p>
   </body>
 </html>
 "
