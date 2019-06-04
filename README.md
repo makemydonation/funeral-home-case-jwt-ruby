@@ -1,14 +1,14 @@
-# ruby-sample
+# funeral-home-case-jwt-ruby
 
-This is a barebones Ruby app using the [Sinatra](http://www.sinatrarb.com) framework.
+This is a sample of a Ruby app using the [Make My Donation](https://funerals.makemydonation.org) Funeral Home Case Inline Creation API with JWT.
 
 ## Running Locally
 
 Make sure you have [Ruby](https://www.ruby-lang.org), [Bundler](http://bundler.io) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
 
 ```sh
-git clone git@github.com:heroku/ruby-sample.git # or clone your own fork
-cd ruby-sample
+git clone git@github.com:makemydonation/funeral-home-case-jwt-ruby.git # or clone your own fork
+cd funeral-home-case-jwt-ruby
 bundle
 heroku local
 ```
